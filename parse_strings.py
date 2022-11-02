@@ -2,12 +2,13 @@
 import sys
 import re
 
-#pattern = r"^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"
+pattern = re.compile(r'[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
 
-
-with open(sys.argv[1], 'r') as my_file:
-    for line in my_file
-
+try:
+    lines = open("C:\\users\\dispareo\\desktop\\strings.txt", "r").readlines()
+    
+    for line in lines:
+        if re.search(r"[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}", line):
             print(line)
-
-            #        if line.startswith("^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"):
+except:
+    print("no dice")
